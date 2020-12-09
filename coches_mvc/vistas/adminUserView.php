@@ -66,8 +66,8 @@
                     <td>
                         <!--<button id="delete" class="btn-sm btn-danger">Borrar</button>-->
                         <!--<button id="edit" class="btn-sm btn-warning">Editar</button>-->
-                        <button class="btn btn-danger delete_user"><i class="fas fa-trash"></i></button>
-                        <button class="btn btn-warning edit_user" ><i class="far fa-edit"></i></button>
+                        <button class="btn btn-lg btn-danger delete_user boton"><i class="fas fa-trash"></i></button>
+                        <button class="btn btn-lg btn-warning edit_user boton" ><i class="far fa-edit"></i></button>
                     </td>
                 </tr>  
                  
@@ -116,23 +116,38 @@ endif;
         <h5 class="modal-title">Editar Usuario</h5>
       </div>
       <div class="modal-body">
+        <div class="form-group">
           <label>NOMBRE</br>
-					<input type="text" name="nombre" id="nombre"  style="width: 100%"></br>
-					<label>EMAIL</br>
-					<input type="text"  name="email" id="email"></br>
-					<label>APELLIDOS</br>
-					<input type="text"  name="apellidos" id="apellidos"></br>
-					<label>FECHA DE NACIMIENTO</br>
-					<input type="int"  name="fecNac" id="fecha"></br>
-					<label>ADMIN</br>
-					<select name="esAdmin">
+          <input type="text" disabled name="nombre" id="nombre" class="form-control"></br>
+        </div>
+          
+        <div class="form-group">
+          <label>EMAIL</br>
+          <input type="text" disabled name="email" id="email" class="form-control"></br>
+        </div>
+					
+        <div class="form-group">
+          <label>APELLIDOS</br>
+          <input type="text" disabled name="apellidos" id="apellidos" class="form-control"></br>
+        </div>
+					
+        <div class="form-group">
+          <label>FECHA DE NACIMIENTO</br>
+          <input type="int" disabled name="fecNac" id="fecha" class="form-control"></br>
+        </div>
+					
+        <div class="form-group">
+          <label>ADMIN</br>
+					<select name="esAdmin" id="adMin" class="form-control">
               <option id="option-0" value="0">NO</option>
               <option id="option-1" value="1">SI</option>
           </select>
+        </div>
+					
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer btn-group">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn-large btn-primary edit-user"><i class="far fa-edit"></i></button>
+        <button type="button" class="btn btn-lg btn-primary edit_user_complete"><i class="far fa-edit"></i></button>
         <!--<a id="delete" class="btn btn-danger" href="index.php?con=usuario&ope=delete&id=">Borrar</a>-->
       </div>
     </div>

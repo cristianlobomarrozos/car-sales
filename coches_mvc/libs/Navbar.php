@@ -21,6 +21,8 @@
 	<link href="./fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css">	
 
+	<!--<script src="node_modules/chart.js/dist/Chart.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#buy").on("click", function(e){
@@ -36,8 +38,10 @@
 		}) ;
 		$(document).on('click', '.edit_user', function(e){
 			e.preventDefault(e) ;
+
+			var id = $(this).parents("tr").data("codusu");
 			var nom = $(this).parents("tr").data("nomusu") ;
-			//alert(nom) ;
+			//alert(id) ;
 			var ema = $(this).parents("tr").data("ema") ;
 			var ape = $(this).parents("tr").data("ape") ;
 			var fecnac = $(this).parents("tr").data("fec") ;
@@ -57,8 +61,24 @@
 				document.getElementById('apellidos').value = ape ;
 				document.getElementById('fecha').value = fecnac ;
 				$('#option-1').attr('selected', 'selected') ;
-			}
+			} ;
 			
+			$('.edit_user_complete').on('click', function(e) {
+				//alert("dentro" + id);
+				
+				var admin = document.getElementById('adMin').value ;
+				
+				function ajax() {
+					$.ajax({
+						url: "index.php?con=usuario&ope=update",
+						type: "POST",
+						data: {"id":id, "admin":admin},
+					}).done(function() {
+						window.location.reload(true);
+					});
+				}
+				ajax();
+			}) ;
 		}) ;
 
 		$(document).on('click', '.delete_user', function(e){
@@ -90,6 +110,7 @@
 		}) ;
 		
 	</script>
+
 </head>
 <body>
 	<nav >
@@ -168,3 +189,7 @@
 	</nav>
 	<div class="wrapper">
 	
+	<audio controls preload>
+	<source src="audio.ogg" type="audio/ogg">
+	Este es un elemento de audio no soportado por tu navegador, prueba con otro
+</audio>

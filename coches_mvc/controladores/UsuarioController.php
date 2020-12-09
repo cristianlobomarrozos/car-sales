@@ -61,22 +61,13 @@
 			route('index.php', 'usuario', 'listar') ;
 		}
 
-		public function edit() {
-			$idu = $_GET["id"] ;
-
-			$user = Usuario::mostrarUsuario($idu) ;
-
-			require_once "./vistas/editUser.php" ;
-
-		}
-
 		public function update() {
-			$idu = $_GET["id"] ;
+			$idu = $_POST["id"] ;
 
 			$user = Usuario::mostrarUsuario($idu) ;
 			//echo "<pre>".print_r($user, true)."</pre>" ;
 			//echo "<pre>".print_r($_GET, true)."</pre>" ;
-			$adm = $_GET["esAdmin"] ;
+			$adm = $_POST["admin"] ;
 
 			//echo $adm ;
 			//die() ;
