@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100% ;
+}
+
+body {
+  height: 100% !important;
+}
+
+.wrapper {
+  min-height: 100% ;
+  padding: 3em 0 3em 0;
+}
+.btn {
+  padding: 2px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown1:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown1 {
+  display: inline-block;
+}
+
+nav {
+  top: 0;
+  z-index: 1;
+}
+
+.dropdown1-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown1-content a {
+  position: relative;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown1-content a:hover {background-color: silver;}
+
+.dropdown1:hover .dropdown1-content {
+  display: block;
+}
+
+footer {
+  min-width: 100%;
+  background: #333;
+  position: static;
+  left: 0;
+  bottom: 0;
+}
+
+.perfil {
+  max-width: 500px;
+}
+
+#usuarios {
+  padding: 2em;
+  width: 50%;
+  border: 3px solid black;
+  margin: 0px auto;
+}
+
+#usuarios input {
+  margin: 2em;
+  width: 75%;
+}
+
+#usuarios label {
+  font-weight: bold;
+}
+
+#modelos {
+  padding: 2em;
+  width: 50%;
+  border: 3px solid black;
+  margin: 0px auto;
+}
+
+#modelos label {
+  font-weight: bold;
+}
+
+#modal-edit .modal-dialog .modal-body input {
+  width: 100% !important;
+}
