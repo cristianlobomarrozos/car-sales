@@ -46,7 +46,19 @@
             <tbody>  
 
                 <?php
+                  $limit = 5;
+                  $page = (isset($_GET['page']) && is_numeric($_GET['page']) ) ? $_GET['page'] : 1;
+                  $paginationStart = ($page - 1) * $limit;
+                  $allRecrods = count($user) ;
+
+                  $totalPages = ceil($allRecrods / $limit);
+                
+                  //echo $total_records;
+                  //die() ;
+                  //echo "<pre>".print_r($user, true)."</pre>" ;
+                  //die();
                     foreach($user as $item):
+                      
                         //$id = $item->getCodUsu() ;
                         //echo "<pre>".print_r($item, true)."</pre>" ;
                 ?>
@@ -78,13 +90,22 @@
 
                 endforeach;
 
-
     else:
          $ses->redirect("index.php") ;
     endif;
 endif;
 ?>
 </table>  
+
+<nav aria-label="Page navigation example mt-5">
+            <ul class="pagination justify-content-center">
+                <?php for($i = 1; $i <= $totalPages; $i++ ): ?>
+                <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
+                    <a class="page-link" href="index.php?con=usuario&ope=listar&page=<?= $i; ?>"> <?= $i; ?> </a>
+                </li>
+                <?php endfor; ?> 
+            </ul>
+        </nav>
     
     </div>
 </form>

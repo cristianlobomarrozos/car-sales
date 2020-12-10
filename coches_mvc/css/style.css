@@ -84,7 +84,9 @@ footer {
 }
 
 .perfil {
-  max-width: 500px;
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
 }
 
 #usuarios {
@@ -141,4 +143,22 @@ div.inicio  {
 
 .boton {
   margin: 5px;
+}
+
+div.show {
+  display: inline-block !important;
+}
+
+.video {
+  margin-top: 10%;
+  margin-bottom: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+#video1 {
+  width: 100%;
+}
+
+footer {
+  margin-top: 15px;
 }

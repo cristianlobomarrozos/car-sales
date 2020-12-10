@@ -25,13 +25,14 @@
 		}
 
 		public function contiene() {
-			$idu = $_GET["idu"] ;
-			$idm = $_GET["idm"] ;
-			$idma = $_GET["idma"] ;
+			$idu = $_POST["idu"] ;
+			$idm = $_POST["idm"] ;
+			$idma = $_POST["idma"] ;
 
 			//$hoy = time() ;
 
-			//echo "<pre>".print_r($hoy, true)."</pre>" ;
+			//echo "<pre>".print_r($_POST, true)."</pre>" ;
+			//die() ;
 
 			$fecha = date('Y-m-d') ;
 

@@ -43,12 +43,20 @@
                     <th scope="col">Clásico</td>  
                 </tr>  
                 <tr>  
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <!--
                     <td><input type="text" name="modelo" id="modelo"></td>  
                     <td><input type="int" name="potencia" id="potencia"></td>  
                     <td><input type="int" name="año" id="año"></td>  
                     <td><select name="marca" id="marca">
                         <option selected value="0"> -- Elija una opción -- </option>
-                        <?php
+                        <?php/*
                             $despl->query("SELECT * FROM marca") ;
                             $item = $despl->getObject("Marca");
 
@@ -60,7 +68,7 @@
 
                                 $item = $despl->getObject("Marca") ;
 
-                            }while($item) ;
+                            }while($item) ;*/
                         ?>
                     </select></td>
                     <td><input type="text" name="descripcion" id="descripcion"></td>
@@ -71,7 +79,7 @@
                             <option value="0">No</option>
                             <option value="1">Si</option>
                         </select>
-                    </td>
+                    </td>-->
                     <td>
                         <button id="add_model" class="btn-sm btn-primary"><i class="fas fa-plus-square"></i></button>
                     </td>
@@ -97,7 +105,8 @@
                         $mar  = $item1->NomMar ;
                         //echo $clas ;
                 ?>  
-                <tr>  
+                <tr data-codmod="<?= $item1->getCodMod() ?>" data-nommod="<?= $item1->getNomMod() ?>">  
+
                     <td><input type="text" disabled name="modelo" value="<?= $item1->getNomMod() ?>"></td>  
                     <td><input type="int" disabled name="potencia" value="<?= $item1->getPotencia() ?>"></td>  
                     <td><input type="int" disabled name="año" value="<?= $item1->getAño() ?>"></td>  
@@ -118,7 +127,7 @@
                     </td>
                     <td>
 
-                        <a class="btn btn-danger" href="index.php?con=modelo&ope=borrar&id=<?= $item1->getCodMod() ?>"><i class="fas fa-trash"></i></a>
+                        <button class="btn btn-lg btn-danger delete_model boton"><i class="fas fa-trash"></i></button>
                         <a class="btn btn-warning" href="index.php?con=modelo&ope=editar&id=<?= $item1->getCodMod() ?>" id="modal"><i class="far fa-edit"></i></a>
                     </td>
                 </tr>  
@@ -140,6 +149,27 @@ endif;
 </table>  
 
 </form>
+
+
+
+<div id="modal-delete-model" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eliminar usuario</h5>
+      </div>
+      <div class="modal-body">
+        <p>¿Está seguro que desea eliminar este modelo?</p>
+        <strong id="nombreModelo"></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger delete_model_second" data-dismiss="modal">Delete</button>
+        <!--<a id="delete" class="btn btn-danger" href="index.php?con=usuario&ope=delete&id=">Borrar</a>-->
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <?php

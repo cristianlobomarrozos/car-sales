@@ -1,0 +1,25 @@
+$page  = (isset($page) && $page < 100000)? (int) $page : 1;
+        	$perPage = 5;
+        	$start = $perPage * ($page - 1);
+			$db->query("SELECT count(*) AS 'count' FROM usuario");
+			$total1 = $db->getObject() ;
+			$total = $total1->count;
+			
+			//die() ;
+        	$totalPages = ceil($total / $perPage);
+
+        	$next = $page+1;
+        	$prev = $page-1;
+			//$sql  = "SELECT * FROM annonce INNER JOIN users ON users.ID =  annonce.a_publisher ORDER BY a_id DESC LIMIT $start, $perPage";
+			$db->query("SELECT * FROM usuario LIMIT $start, $perPage") ;
+			//echo "SELECT * FROM usuario LIMIT $start, $perPage" ;
+			//die() ;
+
+            $data = [] ;
+
+            while($row = $db->getObject("Usuario")):
+                array_push($data, $row) ;
+            endwhile;
+            echo "<pre>".print_r($data, true)."</pre>" ;
+			die()
+            return $data ;

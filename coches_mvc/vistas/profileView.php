@@ -34,15 +34,17 @@
 ?>
 
 <div class="content">
+	<?php
+		//echo $user->getAPI_KEY() ;
+		if($user->getAPI_KEY() == null):
+			echo '<label>Generar API key: </label><a class="btn btn-primary" href="index.php?con=usuario&ope=api&id='.$user->getCodUsu().'">Generar</a>' ;	
+		endif;
+	?>
     
-    <label>Generar API key: </label><a class="btn btn-primary" href="index.php?con=usuario&ope=api&id=<?=$user->getCodUsu()?>">Generar</a>
 		<form method="post" enctype="multipart/form-data">
-			<div class="p-5 m-5">
+			<div class="p-5 col-md-12">
 				<div class="row">
-					<div class="col p-4">
-					    <label>API: </label><br/>
-					    <h4><?php echo $api ; ?></h4>
-						<label>Avatar: </label><br/>
+					<div class="col-md-4 p-4 d-inline-block">
 						<?php
 								//echo "<pre>".print_r($usr, true)."</pre>" ;
 								$avatar = $usr->getAvatar() ;
@@ -55,16 +57,23 @@
 							endif;
 						?>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<label>Email: </label>
-						<input disabled type="email" name="ema" value="<?= $usr->getEmail() ?>" />
+
+					<div class="col-md-2">
+					</div>
+					
+					<div class="col-md-4 d-inline-block">
+						<label><strong>Email: </strong></label>
+						<p><?= $usr->getEmail() ?></p></br>
+						<label><strong>Nombre: </strong></label>
+						<p><?= $usr->getNomUsu()?></p></br>
+						<label><strong>Apellidos: </strong></label>
+						<p><?= $usr->getApeUsu() ?></p></br>
 					</div>
 				</div>
+				
 
 				<div class="row">
-					<div class="col form-group">				
+					<div class="form-group">				
 					    <label for="img">Cambiar avatar: </label>
 					    <input type="file" class="form-control-file" id="img" name="img" 
 					    	   accept="image/jpg, image/png" />

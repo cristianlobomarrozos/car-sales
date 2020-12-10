@@ -4,8 +4,9 @@
 		<div class="col-md-12">
 			
 		</div>
-	</div>	<div class="row">
-		<div class="col-md-6">
+	</div>
+	<div class="row">
+		<div class="col-md-6 first">
 			<h2>
 				Modernos
 			</h2>
@@ -19,7 +20,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6 first">
 			<h2>
 				Clásicos
 			</h2>
@@ -35,30 +36,17 @@
 		</div>
 	</div>
 
-	<div>
-	<canvas id="bar-chart" width="800" height="450"></canvas>
-	</div>
-    <script>
-		// Bar chart
-new Chart(document.getElementById("bar-chart"), {
-    type: 'bar',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [
-        {
-          label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [2478,5267,734,784,433]
-        }
-      ]
-    },
-    options: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
 
-    </script>
+
+	
+
+		
+<audio id= "audio1" autoplay onloadeddata="setHalfVolume()">
+	<source src="./audio/audio.ogg" type="audio/ogg">
+	Este es un elemento de audio no soportado por tu navegador, prueba con otro
+</audio>
+<video autoplay id="video1" loop muted>
+	<source src="./video/video1.mp4">
+</video>
+
+

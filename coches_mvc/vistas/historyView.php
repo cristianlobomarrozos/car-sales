@@ -22,7 +22,9 @@
 				</tr>
 		  </thead>
 
- <?php
+ <?php	
+
+
 
  		foreach($ped as $item):
 
@@ -49,6 +51,38 @@
 
 ?>
 </table>
+
+<div>
+	<canvas id="bar-chart" width="800" height="450"></canvas>
+	</div>
+
+<script>
+		// Bar chart
+		let x = [] ;
+		let y = [] ;
+new Chart(document.getElementById("bar-chart"), {
+    type: 'line',
+    data: {
+      labels: x,
+      datasets: [
+        {
+         
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: y
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Compras realizadas'
+      }
+    }
+});
+
+    </script>
+
 
 
 <?php

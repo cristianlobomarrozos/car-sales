@@ -5,6 +5,12 @@
 	require_once "libs/Sesion.php" ;
 	
 	//echo "<pre>".print_r($_GET, true)."</pre>" ;
+
+
+	//echo "<pre>".print_r($_FILES, true)."</pre>" ;
+	//die() ;
+	
+
 	if(isset($_GET["con"])):
 
 		$nom = $_GET["con"] ;
@@ -24,6 +30,23 @@
 
 		$controlador->$ope() ;
 
+	elseif(isset($_POST["con"])):
+		$nom = $_POST["con"] ;
+		$ope = $_POST["ope"] ;
+
+		$controller = $nom."Controller" ;
+ 
+		ucfirst($controller);
+
+		//echo "<h1>".ucfirst($controller)."</h1>" ; 
+		//die() ;
+		require_once "./controladores/".ucfirst($controller).".php" ;
+		//echo $controller ;
+		//echo ucfirst($controller) ;
+
+		$controlador = new $controller() ;
+
+		$controlador->$ope() ;
 	else:
 	include("libs/Navbar.php");
 

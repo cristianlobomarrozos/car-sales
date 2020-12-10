@@ -17,23 +17,170 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
 
 	<link href="./fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css">	
+	<link rel="stylesheet" href="./css/carousel.css">	
 
 	<!--<script src="node_modules/chart.js/dist/Chart.js"></script>-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<script type="text/javascript">
+
+$(document).ready(function() {
+		$("#target-content").load("pagination.php?page=1");
+		$(".page-link").click(function(){
+			var id = $(this).attr("data-id");
+			var select_id = $(this).parent().attr("id");
+			$.ajax({
+				url: "pagination.php",
+				type: "GET",
+				data: {
+					page : id
+				},
+				cache: false,
+				success: function(dataResult){
+					$("#target-content").html(dataResult);
+					$(".pageitem").removeClass("active");
+					$("#"+select_id).addClass("active");
+					
+				}
+			});
+		});
+    });
+
+
+
 		$(document).ready(function(){
 			$("#buy").on("click", function(e){
 				e.preventDefault(e) ;
 				var idu = $(this).data("codusu") ;
 				var idma = $(this).data("codmar") ;
 				var idm = $(this).data("codmod") ;
-				console.log(idu) ;
-				$("#comprado").modal("show") ;
-				$("#buying").attr("href", "index.php?con=pedido&ope=contiene&idm="+idm+"&idma="+idma+"&idu="+idu)
 
+				
+				console.log(idm) ;
+				$("#comprando").modal("show") ;
+				//$("#buying").attr("href", "index.php?con=pedido&ope=contiene&idm="+idm+"&idma="+idma+"&idu="+idu)
+
+				$(".complete_buying").on('click', function(e) {
+					var dni = document.getElementById('num_dni').value ;
+					var dniLetra = document.getElementById('letra').value ;
+
+					var b = document.forms["buyModel"]["nombre"].value;
+					var n = document.forms["buyModel"]["email"].value;
+					var m = document.forms["buyModel"]["num_dni"].value;
+					var c = document.forms["buyModel"]["letra"].value;
+					
+					if (b== "") {
+						alert("Name must be filled out");
+						return false;
+					} else if(n == "") {
+						alert("Email must be filled out");
+						return false;
+					} else if(m == "" || m.toString().length != 8) {
+						alert("DNI must be filled out and have 8 digits");
+						return false;
+					} else if(c == "") {
+						alert("Letter must be filled out");
+						return false;
+					}
+
+					function DNI(dni) {
+					switch(dni % 23) {
+						case 0:
+							var letra = "T" ; 
+						break;
+						case 1:
+								var letra = "R" ; 
+						break;
+						case 2:
+							var letra = "W" ;
+						break;
+						case 3:
+							var letra = "A" ;
+						break;
+						case 4:
+							var letra = "G" ;
+						break;
+						case 5:
+							var letra = "M" ;
+						break;
+						case 6:
+							var letra = "Y" ;
+						break;
+						case 7:
+							var letra = "F" ;
+						break;
+						case 8:
+							var letra = "P" ;
+						break;
+						case 9:
+							var letra = "D" ;
+						break;
+						case 10:
+							var letra = "X" ;
+						break;
+						case 11:
+							var letra = "B" ;
+						break;
+						case 12:
+							var letra = "N" ;
+						break;
+						case 13:
+							var letra = "J" ;
+						break;
+						case 14:
+							var letra = "Z" ;
+						break;
+						case 15:
+							var letra = "S" ;
+						break;
+						case 16:
+							var letra = "Q" ;
+						break;
+						case 17:
+							var letra = "V" ;
+						break;
+						case 18:
+							var letra = "H" ;
+						break;
+						case 19:
+							var letra = "L" ;
+						break;
+						case 20:
+							var letra = "C" ;
+						break;
+						case 21:
+							var letra = "K" ;
+						break;
+						case 22:
+							var letra = "E" ;
+						break;
+						default:
+					}
+
+					if(!(letra === dniLetra)){
+						alert("error") ;
+					} else {
+						function ajax() {
+							$.ajax({
+								url: "index.php?con=pedido&ope=contiene",
+								type: "POST",
+								data: {"idm":idm, "idma":idma, "idu":idu},
+							}).done(function() {
+								window.location.reload(true);
+							});
+						}
+						alert("¡Gracias por su compra!") ;
+						ajax();
+					}
+				}
+
+					DNI(dni) ;
+				}) ;
+				
+				
 			}) ;
 		}) ;
 		$(document).on('click', '.edit_user', function(e){
@@ -108,7 +255,59 @@
 				setTimeout(ajax, timeDelay);
 			}) ;
 		}) ;
-		
+
+		$(document).on('click', '.delete_model', function(e){
+			e.preventDefault(e) ;
+			var timeDelay = 1500;
+			var id = $(this).parents("tr").data("codmod");
+			var nombre = $(this).parents("tr").data("nommod") ;
+			var col = $(this).parents("tr") ;
+			//alert(id) ;
+			$("#modal-delete-model").modal("show") ;
+			$("#nombreModelo").html(nombre) ;
+
+			$('.delete_model_second').on('click', function(e) {
+				e.preventDefault() ;
+				col.fadeOut(1000);
+				//alert("dentro " + id) ;
+				function ajax() {
+					$.ajax({
+						url: "index.php?con=modelo&ope=borrar",
+						type: "POST",
+						data: {"id":id},
+					}).done(function() {
+						window.location.reload(true);
+					}); ;
+				}
+				
+				setTimeout(ajax, timeDelay);
+			}) ;
+		}) ;
+
+		function validateModel() {
+		var x = document.forms["addModel"]["modelo"].value;
+		var y = document.forms["addModel"]["potencia"].value;
+		var z = document.forms["addModel"]["marca"].value;
+		var a = document.forms["addModel"]["año"].value;
+		var img = document.forms["addModel"]["img[]"].value;
+
+			if (x == "") {
+				alert("Model must be filled out");
+				return false;
+			} else if(y == "") {
+				alert("Power must be filled out");
+				return false;
+			} else if(z == 0) {
+				alert("The brand must be filled out");
+				return false;
+			} else if(a == "") {
+				alert("Year must be filled out");
+				return false;
+			} else if( document.getElementById("img").files.length == 0 ){
+				alert("You must upload atleast 1 image")
+				return false ;
+			}
+		}
 	</script>
 
 </head>
@@ -188,8 +387,15 @@
 	</div>
 	</nav>
 	<div class="wrapper">
-	
-	<audio controls preload>
-	<source src="audio.ogg" type="audio/ogg">
-	Este es un elemento de audio no soportado por tu navegador, prueba con otro
-</audio>
+
+<script>
+  function setHalfVolume() {
+    var myAudio = document.getElementById("audio1");  
+    myAudio.volume = 0.05; //Changed this to 0.5 or 50% volume since the function is called Set Half Volume ;)
+}
+
+function setVideoVolume() {
+	var audio = document.getElementById("video1") ;
+	audio.volume = 0 ;
+}
+</script>

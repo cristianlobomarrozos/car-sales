@@ -43,36 +43,61 @@
 		}
 
 		public function anyadir() {
-			//echo "<pre>".print_r($_GET, true)."</pre>" ;
-			//die() ;
-			$NomMod = $_GET["modelo"] ;
-			$Potencia = $_GET["potencia"] ;
-			$año = $_GET["año"] ;
-			$marca = $_GET["marca"] ;
-			$descripcion = $_GET["descripcion"]??null ;
-			$precio = $_GET["precio"]??null ;
-			$esClasico = $_GET["esClasico"] ;
+			
+			if (isset($_POST["modelo"])):
 
-			$mod = new Modelo() ;
-			$mod->setNomMod($NomMod) ;
-			$mod->setPotencia($Potencia) ;
-			$mod->setAño($año) ;
-			$mod->setCodMar($marca) ;
-			$mod->setDescripcion($descripcion) ;
-			$mod->setPrecio($precio) ;
-			$mod->setEsClasico($esClasico) ;
+				$NomMod = $_POST["modelo"] ;
+				$Potencia = $_POST["potencia"] ;
+				$año = $_POST["año"] ;
+				$marca = $_POST["marca"] ;
+				$descripcion = $_POST["descripcion"]??null ;
+				$precio = $_POST["precio"]??null ;
+				$esClasico = $_POST["esClasico"] ;
 
-			//echo "<pre>".print_r($mod, true)."</pre>" ;
-			//die() ;
+				$mod = new Modelo() ;
+				$mod->setNomMod($NomMod) ;
+				$mod->setPotencia($Potencia) ;
+				$mod->setAño($año) ;
+				$mod->setCodMar($marca) ;
+				$mod->setDescripcion($descripcion) ;
+				$mod->setPrecio($precio) ;
+				$mod->setEsClasico($esClasico) ;
 
-			$mod->anadir() ;
-			//die() ;	
+				$mod->anadir() ;
+				if (!empty($_FILES)):
+					$x = 0 ;
+					
+					$y = count($_FILES["img"]["name"], COUNT_RECURSIVE) ;
 
-			route('index.php', 'modelo', 'listar') ;
+					while($x < $y) {
+						if(!is_dir($_SERVER['DOCUMENT_ROOT']."/coches_mvc/images/coches/".$NomMod."/")):
+							mkdir($_SERVER['DOCUMENT_ROOT']."/coches_mvc/images/coches/".$NomMod."/");
+						endif;
+						
+						$path_ini = $_FILES["img"]["tmp_name"][$x] ;
+						$path_fin = $_SERVER['DOCUMENT_ROOT']."/coches_mvc/images/coches/".$NomMod."/".$x.".jpg" ;
+						//echo "fin" ;
+						//echo "<pre>".print_r($path_fin,true)."</pre>" ;
+						//echo "ini" ;
+						//echo "<pre>".print_r($path_ini,true)."</pre>" ;
+						$x++ ;
+						if (move_uploaded_file($path_ini, $path_fin)):
+							echo "Exito" ;
+						else:
+							echo "Error" ;
+						endif;
+					}
+
+				endif ;
+
+				route('index.php', 'modelo', 'listar') ;
+			else:
+				require_once "./vistas/newModel.php" ;
+			endif;
 		}
 
 		public function borrar() {
-			$idm = $_GET["id"] ;
+			$idm = $_POST["id"] ;
 
 			$mod = new Modelo() ;
 			$mod->delete($idm) ;

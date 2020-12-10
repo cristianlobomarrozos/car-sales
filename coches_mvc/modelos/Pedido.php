@@ -98,10 +98,10 @@
             while($row = $db->getObject()):
             	array_push($data, $row) ;
             endwhile;
-            
-            //echo "<pre>".print_r($data, true)."</pre>" ;
-            //die() ;
-            return $data ;
+			
+			die() ;
+
+            return $data3 ;
 	    }
 
 	    public function save() {
@@ -134,7 +134,8 @@
 	    	] ;
 
 	    	$db->bindAll($sql, $data) ;
-	    }
+		}
+		
 }
 
 
