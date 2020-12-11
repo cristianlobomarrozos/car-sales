@@ -24,9 +24,11 @@
 
  <?php	
 
+		//echo "<pre>".print_r($ped[0], true)."</pre>" ;
 
+		//die() ;
 
- 		foreach($ped as $item):
+ 		foreach($ped[0] as $item):
 
  		//echo "<pre>".print_r($ped, true)."</pre>" ;
 
@@ -46,28 +48,44 @@
 
 		<?php
 		endforeach;
-
-
-
 ?>
 </table>
+
+<?php
+
+	//echo "<pre>".print_r($ped[1], true)."</pre>" ;
+
+	//die() ;
+
+	$x = [] ;
+	$y = [] ;
+	foreach($ped[1] as $item):
+
+		array_push($x, $item->NomMod) ;
+		array_push($y, $item->cantidad) ;
+	endforeach;
+
+	//echo "<pre>".print_r($x, true)."</pre>" ;
+	//echo "<pre>".print_r($y, true)."</pre>" ;
+	
+?>
 
 <div>
 	<canvas id="bar-chart" width="800" height="450"></canvas>
 	</div>
 
 <script>
+	var x = <?php echo json_encode($x); ?>; 
+	var y = <?php echo json_encode($y); ?>; 
+
+
 		// Bar chart
-		let x = [] ;
-		let y = [] ;
 new Chart(document.getElementById("bar-chart"), {
     type: 'line',
     data: {
       labels: x,
       datasets: [
         {
-         
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
           data: y
         }
       ]
@@ -77,14 +95,16 @@ new Chart(document.getElementById("bar-chart"), {
       title: {
         display: true,
         text: 'Compras realizadas'
-      }
+      },
+	  scales: {
+            yAxes: [{
+                stacked: true
+            }]
+	  }
     }
 });
 
     </script>
-
-
-
 <?php
 include "libs/Footer.php";
 ?>

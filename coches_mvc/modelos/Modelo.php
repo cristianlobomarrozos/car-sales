@@ -1,6 +1,12 @@
 <?php
 
-
+    /**
+     * @class Modelo
+     */
+	
+	/**
+	 * Modelo
+	 */
 	class Modelo {
 
 		private $CodMod;
@@ -172,6 +178,14 @@
             return $this;
         }
 
+        /**
+         * Searching inside our Database the classic models
+         */        
+        /**
+         * mostrarClasicos
+         *
+         * @return void
+         */
         public static function mostrarClasicos() {
             $db = Database::getInstance() ;
 
@@ -187,6 +201,14 @@
             return $data ;
         }
 
+        /**
+         * Searching inside our Database the modern models
+         */        
+        /**
+         * mostrarModernos
+         *
+         * @return void
+         */
         public static function mostrarModernos() {
             $db = Database::getInstance() ;
 
@@ -203,6 +225,14 @@
             return $data ;
         }
 
+        /**
+         * Searching inside our Database all models
+         */        
+        /**
+         * mostrarTodos
+         *
+         * @return void
+         */
         public static function mostrarTodos() {
             $db = Database::getInstance() ;
 
@@ -218,6 +248,15 @@
             return $data ;
         }
 
+        /**
+         * Searching inside our Database an especific model and show its information
+         */        
+        /**
+         * mostrarModelo
+         *
+         * @param  mixed $id
+         * @return void
+         */
         public static function mostrarModelo($id) {
             $db = Database::getInstance() ;
 
@@ -229,6 +268,14 @@
 
         }
 
+        /**
+         * Adding a new model in the Database
+         */        
+        /**
+         * anadir
+         *
+         * @return void
+         */
         public function anadir() {
 
             $db = Database::getInstance() ;
@@ -253,6 +300,15 @@
             //$db->query() ;
         }
 
+        /**
+         * Deleting a model from the Database
+         */        
+        /**
+         * delete
+         *
+         * @param  mixed $id
+         * @return void
+         */
         public function delete($id) {
             $db = Database::getInstance() ;
             $sql = "DELETE FROM modelo WHERE CodMod=$id ;" ;
@@ -263,6 +319,15 @@
             $db->query($sql) ;
         }
 
+        /**
+         * Edit model's information
+         */        
+        /**
+         * editar
+         *
+         * @param  mixed $id
+         * @return void
+         */
         public function editar($id){
             $db = Database::getInstance() ;
 

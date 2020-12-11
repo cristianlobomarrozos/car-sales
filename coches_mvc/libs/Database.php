@@ -1,5 +1,8 @@
 <?php 
-	
+		
+	/**
+	 * Database
+	 */
 	class Database {
 
 		private $host = '' ;
@@ -13,7 +16,12 @@
 
 
 	 	/**
-	 	 * Conexión a la base de datos
+	 	 * Database conection
+	 	 */	 	
+	 	/**
+	 	 * __construct
+	 	 *
+	 	 * @return void
 	 	 */
 	 	private function __construct() {
 
@@ -30,8 +38,13 @@
 
 
 	 	/**
-	 	 * Devuelve una instancia de la clase, ya que el constructor es privado (Patrón singletone).
+	 	 * Returns an instance of the class, since the constructor is private (Pattern singletone).
 	 	 * @return
+	 	 */	 	
+	 	/**
+	 	 * getInstance
+	 	 *
+	 	 * @return void
 	 	 */
 	 	public static function getInstance() {
 	 		if (self::$instance==null) 
@@ -41,12 +54,24 @@
 	 	}
 
 	 	/**
-	 	 * Cierra la conexión a la base de datos
+	 	 * Closes database conection
+	 	 */	 	
+	 	/**
+	 	 * __destruct
+	 	 *
+	 	 * @return void
 	 	 */
 	 	public function __destruct(){
 			$this->pdo = null ;
 		}
-
+	    
+	    /**
+	     * bindAll
+	     *
+	     * @param  mixed $sql
+	     * @param  mixed $parray
+	     * @return void
+	     */
 	    public function bindAll($sql, $parray = ""){
 		   	//echo "<br/>".$sql ;
 		    //echo "<pre>".print_r($parray,true)."</pre><br/>" ;
@@ -65,7 +90,7 @@
 	    //
 	    }
 		/**
-		 * Realiza la consulta a la base de datos y devuelve un resultado
+		 * Makes the query to the Database and returns a result
 		 *
 		 * @param $sql
 		 * @return
@@ -76,15 +101,20 @@
 		}
 
 		/**
-		 * Devuelve un registro en formato de objeto
-		 *
+		 * Returns a record as an object
+		 * 
 		 * @param $cls
 		 * @return
 		 */
 		public function getObject(string $cls = "StdClass"){
 			return $this->res->fetchObject($cls) ;
 		}
-
+		
+		/**
+		 * lastId
+		 *
+		 * @return void
+		 */
 		public function lastId()
 		{
 			return $this->pdo->lastInsertId() ;

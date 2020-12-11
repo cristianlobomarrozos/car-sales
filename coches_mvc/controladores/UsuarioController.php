@@ -7,18 +7,41 @@
 	//die();
 	//require_once "libs/Routing.php" ;
 	include_once($_SERVER['DOCUMENT_ROOT']."/coches_mvc/libs/Routing.php") ;
-
+	
+	/**
+	 * UsuarioController
+	 */
 	class UsuarioController {
-
+		
+		/**
+		 * __construct
+		 *
+		 * @return void
+		 */
 		public function __construct() {}
 
+		/**
+		 * Login function
+		 */		
+		/**
+		 * login
+		 *
+		 * @return void
+		 */
 		public function login() {
 
 			$usu = Usuario::login() ;
 
 			//echo "<pre>".print_r($lec, true)."</pre>" ;
 		}
-
+		/**
+		 * Logout function
+		 */		
+		/**
+		 * logout
+		 *
+		 * @return void
+		 */
 		public function logout() {
 
 			$usu = Usuario::logout() ;
@@ -26,13 +49,29 @@
 			//echo "<pre>".print_r($lec, true)."</pre>" ;
 		}
 
+		/**
+		 * List of all users Registered in our App, will be only seen by the ADMINS
+		 */		
+		/**
+		 * listar
+		 *
+		 * @return void
+		 */
 		public function listar() {
 			$user = Usuario::mostrarTodos() ;
             //echo "<pre>".print_r($user, true)."</pre>" ;
 			require_once "./vistas/adminUserView.php" ;
 
 		}
-
+		
+		/**
+		 * Our own profile (only seen by the user)
+		 */		
+		/**
+		 * perfil
+		 *
+		 * @return void
+		 */
 		public function perfil() {
 			$idu = $_GET["id"] ;
 
@@ -41,6 +80,14 @@
 			require_once "./vistas/profileView.php" ;
 		}
 
+		/**
+		 * Our orders (only seen by the user)
+		 */		
+		/**
+		 * pedidos
+		 *
+		 * @return void
+		 */
 		public function pedidos() {
 
 			$idu = $_GET["id"] ;
@@ -50,6 +97,14 @@
 			require_once "./vistas/historyView.php" ;
 		}
 
+		/**
+		 * Delete user from the Database(only admin role can do it)
+		 */		
+		/**
+		 * delete
+		 *
+		 * @return void
+		 */
 		public function delete() {
 			//echo "<pre>".print_r($_POST, true)."</pre>" ;
 			//die();
@@ -61,6 +116,14 @@
 			route('index.php', 'usuario', 'listar') ;
 		}
 
+		/**
+		 * Function used to promote users to admin role (only admin role can do it)
+		 */		
+		/**
+		 * update
+		 *
+		 * @return void
+		 */
 		public function update() {
 			$idu = $_POST["id"] ;
 
@@ -80,6 +143,14 @@
 
 		}
 
+		/**
+		 * Sign Up function
+		 */		
+		/**
+		 * registrar
+		 *
+		 * @return void
+		 */
 		public function registrar() {
 			echo "<pre>".print_r($_POST,true)."</pre>" ;
 			$NomUsu = $_POST["nombre"] ;
@@ -105,6 +176,14 @@
 			require_once "vistas/loginView.php" ;
 		}
 
+		/**
+		 * Function used to generate API_KEY, so the user will be able to use our API
+		 */		
+		/**
+		 * api
+		 *
+		 * @return void
+		 */
 		public function api() {
 		    $idu = $_GET["id"] ;
 		    //echo $idu ;

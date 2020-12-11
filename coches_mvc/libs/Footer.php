@@ -7,8 +7,6 @@
           <div class="row row-30">
             <div class="col-md-4 col-xl-5">
               <div class="pr-xl-4"><a class="brand" href="index.php"><img class="brand-logo-light"></a>
-                <!--<p class="text-white">We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>-->
-                <!-- Rights-->
                 <p class="rights text-white"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Cristian Lobo Marrozos</span><span>. </span><span>All Rights Reserved.</span></p>
               </div>
             </div>
@@ -24,7 +22,7 @@
               </dl>
               <dl class="contact-list">
                 <dt>phones:</dt>
-                <dd><a href="tel:#">666666666</a> <span><!--or</span> <a href="tel:#">https://karosearch.com</a>-->
+                <dd><a href="tel:#">666666666</a> <span>
                 </dd>
               </dl>
             </div>

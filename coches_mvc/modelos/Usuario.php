@@ -1,5 +1,8 @@
 <?php
-	
+		
+	/**
+	 * Usuario
+	 */
 	class Usuario {
 
 		private $CodUsu ;
@@ -193,20 +196,42 @@
 	        return $this ;
 	    }
 
+		/**
+		 * Login function and redirect
+		 */	    
+	    /**
+	     * login
+	     *
+	     * @return void
+	     */
 	    public static function login() {
 	    	require_once "./vistas/loginView.php" ;
 	    }
 
+		/**
+		 * Logout function and redirect
+		 */	    
+	    /**
+	     * logout
+	     *
+	     * @return void
+	     */
 	    public static function logout() {
 	    	$sesion = Sesion::getInstance() ;
 
 	    	$sesion->close() ;
-	    	//if(!isset($_SESSION))
-	    	//	echo "<pre>".print_r($_SESSION, true)."</pre>" ;
-	    	//die() ;
+	    	
 			$sesion->redirect("index.php") ;
 	    }
 
+		/**
+		 * Showing every registered user(only seen as and admin)
+		 */	    
+	    /**
+	     * mostrarTodos
+	     *
+	     * @return void
+	     */
 	    public static function mostrarTodos() {
             $db = Database::getInstance() ;
 
@@ -221,7 +246,13 @@
 
             return $data ;
         }
-
+		        
+        /**
+         * mostrarUsuario
+         *
+         * @param  mixed $id
+         * @return void
+         */
         public static function mostrarUsuario($id) {
         	$db = Database::getInstance() ;
 
@@ -233,6 +264,15 @@
             return $data ;
         }
 
+		/**
+		 * Showing user's order (only seen by the user)
+		 */        
+        /**
+         * mostrarPedidos
+         *
+         * @param  mixed $id
+         * @return void
+         */
         public static function mostrarPedidos($id) {
         	$db = Database::getInstance() ;
 
@@ -245,6 +285,15 @@
             return $data ;
         }
 
+		/**
+		 * Delete registered user (only as an admin)
+		 */        
+        /**
+         * borraUsuario
+         *
+         * @param  mixed $id
+         * @return void
+         */
         public static function borraUsuario($id) {
         	$db = Database::getInstance() ;
         	$sql = "DELETE FROM usuario WHERE CodUsu=$id" ;
@@ -253,7 +302,14 @@
         	$db->query($sql) ;
         }
 
-
+		/**
+		 * Updating user's role 
+		 */        
+        /**
+         * updateUsuario
+         *
+         * @return void
+         */
         public function updateUsuario() {
         	$db = Database::getInstance() ;
         	
@@ -271,6 +327,14 @@
         	$db->bindAll($sql, $data) ;
         }
 
+		/**
+		 * Adding the new user into the database
+		 */        
+        /**
+         * save
+         *
+         * @return void
+         */
         public function save() {
         	$db = Database::getInstance() ;
 
@@ -292,6 +356,15 @@
         	//die() ;
         }
 
+		/**
+		 * Insert the generated api into the database with md5 codification
+		 */        
+        /**
+         * generateApi
+         *
+         * @param  mixed $id
+         * @return void
+         */
         public function generateApi($id) {
             $db = Database::getInstance() ;
             

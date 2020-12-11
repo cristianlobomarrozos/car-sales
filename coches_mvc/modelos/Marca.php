@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @Class
+ * 
+ * Marca
+ */
 	
 	class Marca {
 
@@ -9,7 +15,7 @@
 		
 	
         /**
-         * @return mixed
+         * @return CodMar
          */
         public function getCodMar()
         {
