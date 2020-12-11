@@ -1,8 +1,7 @@
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			
+
 		</div>
 	</div>
 	<div class="row">
@@ -38,15 +37,13 @@
 
 
 
-	
-
-		
-<audio id= "audio1" autoplay onloadeddata="setHalfVolume()">
-	<source src="./audio/audio.ogg" type="audio/ogg">
-	Este es un elemento de audio no soportado por tu navegador, prueba con otro
-</audio>
-<video autoplay id="video1" loop muted>
-	<source src="./video/video1.mp4">
-</video>
 
 
+
+	<audio id="audio1" autoplay onloadeddata="setHalfVolume()">
+		<source src="./audio/audio.ogg" type="audio/ogg">
+		Este es un elemento de audio no soportado por tu navegador, prueba con otro
+	</audio>
+	<video autoplay id="video1" loop muted>
+		<source src="./video/video1.mp4">
+	</video>

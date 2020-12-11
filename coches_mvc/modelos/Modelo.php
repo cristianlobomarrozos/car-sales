@@ -1,351 +1,355 @@
 <?php
 
+/**
+ * @class Modelo
+ */
+
+/**
+ * Modelo
+ */
+class Modelo
+{
+
+    private $CodMod;
+    private $CodMar;
+    private $NomMod;
+    private $Potencia;
+    private $año;
+    private $esClasico;
+    private $Descripcion;
+    private $Precio;
+
     /**
-     * @class Modelo
+     * @return mixed
      */
-	
-	/**
-	 * Modelo
-	 */
-	class Modelo {
+    public function getCodMod()
+    {
+        return $this->CodMod;
+    }
 
-		private $CodMod;
-		private $CodMar ;
-		private $NomMod;
-		private $Potencia;
-		private $año;
-		private $esClasico;
-        private $Descripcion ;
-        private $Precio ;
+    /**
+     * @param mixed $CodMod
+     *
+     * @return self
+     */
+    public function setCodMod($CodMod)
+    {
+        $this->CodMod = $CodMod;
 
-        /**
-         * @return mixed
-         */
-        public function getCodMod()
-        {
-            return $this->CodMod;
-        }
+        return $this;
+    }
 
-        /**
-         * @param mixed $CodMod
-         *
-         * @return self
-         */
-        public function setCodMod($CodMod)
-        {
-            $this->CodMod = $CodMod;
+    /**
+     * @return mixed
+     */
+    public function getNomMod()
+    {
+        return $this->NomMod;
+    }
 
-            return $this;
-        }
+    /**
+     * @param mixed $NomMod
+     *
+     * @return self
+     */
+    public function setNomMod($NomMod)
+    {
+        $this->NomMod = $NomMod;
 
-        /**
-         * @return mixed
-         */
-        public function getNomMod()
-        {
-            return $this->NomMod;
-        }
+        return $this;
+    }
 
-        /**
-         * @param mixed $NomMod
-         *
-         * @return self
-         */
-        public function setNomMod($NomMod)
-        {
-            $this->NomMod = $NomMod;
+    /**
+     * @return mixed
+     */
+    public function getPotencia()
+    {
+        return $this->Potencia;
+    }
 
-            return $this;
-        }
+    /**
+     * @param mixed $Potencia
+     *
+     * @return self
+     */
+    public function setPotencia($Potencia)
+    {
+        $this->Potencia = $Potencia;
 
-        /**
-         * @return mixed
-         */
-        public function getPotencia()
-        {
-            return $this->Potencia;
-        }
+        return $this;
+    }
 
-        /**
-         * @param mixed $Potencia
-         *
-         * @return self
-         */
-        public function setPotencia($Potencia)
-        {
-            $this->Potencia = $Potencia;
+    /**
+     * @return mixed
+     */
+    public function getAño()
+    {
+        return $this->año;
+    }
 
-            return $this;
-        }
+    /**
+     * @param mixed $año
+     *
+     * @return self
+     */
+    public function setAño($año)
+    {
+        $this->año = $año;
 
-        /**
-         * @return mixed
-         */
-        public function getAño()
-        {
-            return $this->año;
-        }
+        return $this;
+    }
 
-        /**
-         * @param mixed $año
-         *
-         * @return self
-         */
-        public function setAño($año)
-        {
-            $this->año = $año;
+    /**
+     * @return mixed
+     */
+    public function getEsClasico()
+    {
+        return $this->esClasico;
+    }
 
-            return $this;
-        }
+    /**
+     * @param mixed $Clasico
+     *
+     * @return self
+     */
+    public function setEsClasico($esClasico)
+    {
+        $this->esClasico = $esClasico;
 
-        /**
-         * @return mixed
-         */
-        public function getEsClasico()
-        {
-            return $this->esClasico;
-        }
+        return $this;
+    }
 
-        /**
-         * @param mixed $Clasico
-         *
-         * @return self
-         */
-        public function setEsClasico($esClasico)
-        {
-            $this->esClasico = $esClasico;
+    /**
+     * @return mixed
+     */
+    public function getCodMar()
+    {
+        return $this->CodMar;
+    }
 
-            return $this;
-        }
+    /**
+     * @param mixed $CodMar
+     *
+     * @return self
+     */
+    public function setCodMar($CodMar)
+    {
+        $this->CodMar = $CodMar;
 
-        /**
-         * @return mixed
-         */
-        public function getCodMar()
-        {
-            return $this->CodMar;
-        }
+        return $this;
+    }
 
-        /**
-         * @param mixed $CodMar
-         *
-         * @return self
-         */
-        public function setCodMar($CodMar)
-        {
-            $this->CodMar = $CodMar;
+    /**
+     * @return mixed
+     */
+    public function getDescripcion()
+    {
+        return $this->Descripcion;
+    }
 
-            return $this;
-        }
+    /**
+     * @param mixed $Descripcion
+     *
+     * @return self
+     */
+    public function setDescripcion($Descripcion)
+    {
+        $this->Descripcion = $Descripcion;
 
-        /**
-         * @return mixed
-         */
-        public function getDescripcion()
-        {
-            return $this->Descripcion;
-        }
+        return $this;
+    }
 
-        /**
-         * @param mixed $Descripcion
-         *
-         * @return self
-         */
-        public function setDescripcion($Descripcion)
-        {
-            $this->Descripcion = $Descripcion;
+    /**
+     * @return mixed
+     */
+    public function getPrecio()
+    {
+        return $this->Precio;
+    }
 
-            return $this;
-        }
+    /**
+     * @param mixed $Precio
+     *
+     * @return self
+     */
+    public function setPrecio($Precio)
+    {
+        $this->Precio = $Precio;
 
-        /**
-         * @return mixed
-         */
-        public function getPrecio()
-        {
-            return $this->Precio;
-        }
+        return $this;
+    }
 
-        /**
-         * @param mixed $Precio
-         *
-         * @return self
-         */
-        public function setPrecio($Precio)
-        {
-            $this->Precio = $Precio;
+    /**
+     * Searching inside our Database the classic models
+     */
+    /**
+     * mostrarClasicos
+     *
+     * @return void
+     */
+    public static function mostrarClasicos()
+    {
+        $db = Database::getInstance();
 
-            return $this;
-        }
+        $db->query("SELECT * FROM modelo WHERE esClasico=1");
 
-        /**
-         * Searching inside our Database the classic models
-         */        
-        /**
-         * mostrarClasicos
-         *
-         * @return void
-         */
-        public static function mostrarClasicos() {
-            $db = Database::getInstance() ;
+        $data = [];
 
-            $db->query("SELECT * FROM modelo WHERE esClasico=1") ;
+        while ($row = $db->getObject("Modelo")) :
+            //echo "<pre>".print_r($row, true)."</pre>" ;
+            array_push($data, $row);
+        endwhile;
 
-            $data = [] ;
+        return $data;
+    }
 
-            while($row = $db->getObject("Modelo")):
-                //echo "<pre>".print_r($row, true)."</pre>" ;
-                array_push($data, $row) ;
-            endwhile;
+    /**
+     * Searching inside our Database the modern models
+     */
+    /**
+     * mostrarModernos
+     *
+     * @return void
+     */
+    public static function mostrarModernos()
+    {
+        $db = Database::getInstance();
 
-            return $data ;
-        }
 
-        /**
-         * Searching inside our Database the modern models
-         */        
-        /**
-         * mostrarModernos
-         *
-         * @return void
-         */
-        public static function mostrarModernos() {
-            $db = Database::getInstance() ;
+        $db->query("SELECT * FROM modelo WHERE esClasico=0");
 
-            
-            $db->query("SELECT * FROM modelo WHERE esClasico=0") ;
+        $data = [];
 
-            $data = [] ;
+        while ($row = $db->getObject("Modelo")) :
+            //echo "<pre>".print_r($row, true)."</pre>" ;
+            array_push($data, $row);
+        endwhile;
 
-            while($row = $db->getObject("Modelo")):
-                //echo "<pre>".print_r($row, true)."</pre>" ;
-                array_push($data, $row) ;
-            endwhile;
+        return $data;
+    }
 
-            return $data ;
-        }
+    /**
+     * Searching inside our Database all models
+     */
+    /**
+     * mostrarTodos
+     *
+     * @return void
+     */
+    public static function mostrarTodos()
+    {
+        $db = Database::getInstance();
 
-        /**
-         * Searching inside our Database all models
-         */        
-        /**
-         * mostrarTodos
-         *
-         * @return void
-         */
-        public static function mostrarTodos() {
-            $db = Database::getInstance() ;
+        $db->query("SELECT * FROM modelo JOIN marca on (modelo.CodMar=marca.CodMar)");
 
-            $db->query("SELECT * FROM modelo JOIN marca on (modelo.CodMar=marca.CodMar)") ;
+        $data = [];
 
-            $data = [] ;
+        while ($row = $db->getObject("Modelo")) :
+            //echo "<pre>".print_r($row, true)."</pre>" ;
+            array_push($data, $row);
+        endwhile;
 
-            while($row = $db->getObject("Modelo")):
-                //echo "<pre>".print_r($row, true)."</pre>" ;
-                array_push($data, $row) ;
-            endwhile;
+        return $data;
+    }
 
-            return $data ;
-        }
+    /**
+     * Searching inside our Database an especific model and show its information
+     */
+    /**
+     * mostrarModelo
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public static function mostrarModelo($id)
+    {
+        $db = Database::getInstance();
 
-        /**
-         * Searching inside our Database an especific model and show its information
-         */        
-        /**
-         * mostrarModelo
-         *
-         * @param  mixed $id
-         * @return void
-         */
-        public static function mostrarModelo($id) {
-            $db = Database::getInstance() ;
+        $db->query("SELECT * FROM modelo WHERE codMod=$id");
 
-            $db->query("SELECT * FROM modelo WHERE codMod=$id") ;
+        $data = $db->getObject("Modelo");
 
-            $data = $db->getObject("Modelo") ;
+        return $data;
+    }
 
-            return $data ;
+    /**
+     * Adding a new model in the Database
+     */
+    /**
+     * anadir
+     *
+     * @return void
+     */
+    public function anadir()
+    {
 
-        }
+        $db = Database::getInstance();
 
-        /**
-         * Adding a new model in the Database
-         */        
-        /**
-         * anadir
-         *
-         * @return void
-         */
-        public function anadir() {
+        $data = [
+            ":nom" => "{$this->NomMod}",
+            ":pot" => "{$this->Potencia}",
+            ":year" => "{$this->año}",
+            ":mar" => "{$this->CodMar}",
+            ":des" => "{$this->Descripcion}",
+            ":pre" => "{$this->Precio}",
+            ":cla" => "{$this->esClasico}"
+        ];
 
-            $db = Database::getInstance() ;
+        //echo "<pre>".print_r($db,true)."</pre><br/>" ;
 
-            $data = [
-                ":nom" => "{$this->NomMod}",
-                ":pot" => "{$this->Potencia}",
-                ":year" => "{$this->año}",
-                ":mar" => "{$this->CodMar}",
-                ":des" => "{$this->Descripcion}",
-                ":pre" => "{$this->Precio}",
-                ":cla" => "{$this->esClasico}"
-            ] ;
+        $sql = "INSERT INTO modelo (NomMod, CodMar, Potencia, año, Descripcion, Precio, esClasico) VALUES (:nom, :mar, :pot, :year, :des, :pre, :cla)";
+        //echo $sql ;
+        //die() ;
+        $db->bindAll($sql, $data);
 
-            //echo "<pre>".print_r($db,true)."</pre><br/>" ;
+        //$db->query() ;
+    }
 
-            $sql = "INSERT INTO modelo (NomMod, CodMar, Potencia, año, Descripcion, Precio, esClasico) VALUES (:nom, :mar, :pot, :year, :des, :pre, :cla)" ;
-            //echo $sql ;
-            //die() ;
-            $db->bindAll($sql, $data) ;
+    /**
+     * Deleting a model from the Database
+     */
+    /**
+     * delete
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function delete($id)
+    {
+        $db = Database::getInstance();
+        $sql = "DELETE FROM modelo WHERE CodMod=$id ;";
 
-            //$db->query() ;
-        }
+        //echo $sql ;
 
-        /**
-         * Deleting a model from the Database
-         */        
-        /**
-         * delete
-         *
-         * @param  mixed $id
-         * @return void
-         */
-        public function delete($id) {
-            $db = Database::getInstance() ;
-            $sql = "DELETE FROM modelo WHERE CodMod=$id ;" ;
+        //die() ;
+        $db->query($sql);
+    }
 
-            //echo $sql ;
+    /**
+     * Edit model's information
+     */
+    /**
+     * editar
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function editar($id)
+    {
+        $db = Database::getInstance();
 
-            //die() ;
-            $db->query($sql) ;
-        }
+        $data = [
+            ":nom" => "{$this->NomMod}",
+            ":pot" => "{$this->Potencia}",
+            ":year" => "{$this->año}",
+            ":mar" => "{$this->CodMar}",
+            ":des" => "{$this->Descripcion}",
+            ":pre" => "{$this->Precio}",
+            ":cla" => "{$this->esClasico}"
+        ];
 
-        /**
-         * Edit model's information
-         */        
-        /**
-         * editar
-         *
-         * @param  mixed $id
-         * @return void
-         */
-        public function editar($id){
-            $db = Database::getInstance() ;
+        $sql = "UPDATE modelo SET NomMod=:nom, CodMar=:mar, Potencia=:pot, año=:year, Descripcion=:des, Precio=:pre, esClasico=:cla WHERE CodMod={$this->CodMod} ;";
 
-            $data = [
-                ":nom" => "{$this->NomMod}",
-                ":pot" => "{$this->Potencia}",
-                ":year" => "{$this->año}",
-                ":mar" => "{$this->CodMar}",
-                ":des" => "{$this->Descripcion}",
-                ":pre" => "{$this->Precio}",
-                ":cla" => "{$this->esClasico}"
-            ] ;
-
-            $sql = "UPDATE modelo SET NomMod=:nom, CodMar=:mar, Potencia=:pot, año=:year, Descripcion=:des, Precio=:pre, esClasico=:cla WHERE CodMod={$this->CodMod} ;" ;
-
-            $db->bindAll($sql, $data) ;
-        }
+        $db->bindAll($sql, $data);
+    }
 }
-
-
-?>

@@ -54,15 +54,15 @@ else :
           <tbody>
 
             <?php
-            
-            
+
+
             //$total_records = $user[10] ;
             //unset($user[10]) ;
             //$total_pages = $user[11] ;
             //unset($user[11]) ;
             //$page = $user[12] ;
             //unset($user[12]) ;
-            
+
             foreach ($user as $item) :
             ?>
               <tr data-codusu="<?= $item->getCodUsu() ?>" class="id" data-nomusu="<?= $item->getNomUsu() ?>" data-ema="<?= $item->getEmail() ?>" data-ape="<?= $item->getApeUsu() ?>" data-fec="<?= $item->getFecNacUsu() ?>" data-adm="<?= $item->getEsAdmin() ?>">
@@ -99,8 +99,8 @@ else :
         endif;
     ?>
     </table>
-<?php  
-/*
+    <?php
+    /*
     
 $pagLink = "<ul class='pagination'>";  
 for ($i=1; $i<=$total_pages; $i++) {
@@ -108,7 +108,7 @@ for ($i=1; $i<=$total_pages; $i++) {
 }
 echo $pagLink . "</ul>";  
 */
-?>
+    ?>
     </div>
     </form>
 

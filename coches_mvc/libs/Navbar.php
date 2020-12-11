@@ -55,7 +55,6 @@ $sesion = Sesion::getInstance();
 			});
 		});
 
-
 		/**
 		 * Buying function using modal and AJAX
 		 */
@@ -389,7 +388,7 @@ $sesion = Sesion::getInstance();
 				e.preventDefault();
 				// capture the href attribute of the a element
 				var url = $(this).attr('href');
-				alert(url) ;
+				alert(url);
 				// perform a get request using ajax to the captured href value
 				$.get(url, function() {
 					// success

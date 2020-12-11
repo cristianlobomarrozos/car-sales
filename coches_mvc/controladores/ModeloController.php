@@ -13,7 +13,7 @@ require_once "./libs/Routing.php";
  */
 class ModeloController
 {
-	
+
 	/**
 	 * __construct
 	 *
@@ -28,7 +28,7 @@ class ModeloController
 	 */
 	/**
 	 * @return [type]
-	 */	
+	 */
 	/**
 	 * clasico
 	 *
@@ -49,7 +49,7 @@ class ModeloController
 	 */
 	/**
 	 * @return [type]
-	 */	
+	 */
 	/**
 	 * moderno
 	 *
@@ -70,7 +70,7 @@ class ModeloController
 	 */
 	/**
 	 * @return [type]
-	 */	
+	 */
 	/**
 	 * listar
 	 *
@@ -88,7 +88,7 @@ class ModeloController
 	/**
 	 * Showing model given the ID
 	 */
-	
+
 	/**
 	 * info
 	 *
@@ -104,7 +104,7 @@ class ModeloController
 
 	/**
 	 * We add the new Model into the Database
-	 */	
+	 */
 	/**
 	 * anyadir
 	 *
@@ -177,7 +177,7 @@ class ModeloController
 
 	/**
 	 * Delete function to delete a Model from the Database
-	 */	
+	 */
 	/**
 	 * borrar
 	 *
@@ -201,7 +201,7 @@ class ModeloController
 		 */
 		route('index.php', 'modelo', 'listar');
 	}
-	
+
 	/**
 	 * editar
 	 *

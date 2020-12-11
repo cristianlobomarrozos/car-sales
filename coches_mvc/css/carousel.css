@@ -1,4 +1,3 @@
-
 ul.slides {
 
     position: relative;
@@ -38,7 +37,7 @@ ul.slides input {
 }   
 
 .slide-image img {
-    width: auto;
+    width: 100%;
     min-width: 100%;
     height: 100%;
 }

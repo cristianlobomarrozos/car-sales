@@ -1,41 +1,40 @@
-<?php	
-	/**
-	 * route
-	 *
-	 * @param  mixed $url
-	 * @param  mixed $con
-	 * @param  mixed $ope
-	 * @param  mixed $params
-	 * @return void
-	 */
-	function route($url, $con, $ope, $params=[])
-	{
-		// we build the base route
+<?php
 
-		$ruta = "$url?con=$con&ope=$ope" ;
+/**
+ * route
+ *
+ * @param  mixed $url
+ * @param  mixed $con
+ * @param  mixed $ope
+ * @param  mixed $params
+ * @return void
+ */
+function route($url, $con, $ope, $params = [])
+{
+	// we build the base route
 
-		// we add the parameters
-		foreach($params as $key => $value)
-			$ruta.="&$key=$value" ;
+	$ruta = "$url?con=$con&ope=$ope";
 
-		// we redirect
-		header('location:'.$ruta) ;
-		exit;
-	}
-	
-	/**
-	 * route1
-	 *
-	 * @param  mixed $url
-	 * @return void
-	 */
-	function route1($url)
-	{
-		
-		$ruta = "$url" ;
+	// we add the parameters
+	foreach ($params as $key => $value)
+		$ruta .= "&$key=$value";
 
-		header('location:'.$ruta) ;
-		exit;
-	}
+	// we redirect
+	header('location:' . $ruta);
+	exit;
+}
 
-	
+/**
+ * route1
+ *
+ * @param  mixed $url
+ * @return void
+ */
+function route1($url)
+{
+
+	$ruta = "$url";
+
+	header('location:' . $ruta);
+	exit;
+}
