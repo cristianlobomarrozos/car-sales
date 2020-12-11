@@ -27,8 +27,8 @@ La funcionalidad de compra nos pedirá que pongamos nuestro nombre, correo elect
 Cada usuario puede acceder a su perfil y, dentro de él, puede cambiar su imagen de perfil, así como pedir la generación de una API_KEY,para poder utilizar la API que hemos creado. Además, también tendrá acceso a su historial de compras en el que aparecerán todos los pedidos que dicho usuario haya realizado y una gráfica que reflejará la cantidad de cada modelo diferente que hemos comprado.
 
 Documentación de la API: 
-  - https://documenter.getpostman.com/view/13832346/TVmV7Ed9
-  - https://documenter.getpostman.com/view/13832346/TVmV7EdA
-  - https://documenter.getpostman.com/view/13832346/TVmV7EdB
+  - Marca: https://documenter.getpostman.com/view/13832346/TVmV7Ed9
+  - Usuario: https://documenter.getpostman.com/view/13832346/TVmV7EdA
+  - Modelo: https://documenter.getpostman.com/view/13832346/TVmV7EdB
 
 Al registrarse en la aplicación, en local no es necesario incluir fecha de nacimiento, mientras que en el hosting externo, si que es necesario rellenar este campo, ya que si está vacío, no realizará la inserción, por lo tanto no podrá acceder dicho usuario. Además de esto, como predeterminado será registrado como no administrador, algún administrador debería ascenderlo en caso de que así lo considere.
