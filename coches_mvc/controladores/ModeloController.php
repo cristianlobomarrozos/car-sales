@@ -24,13 +24,15 @@ class ModeloController
 	}
 
 	/**
-	 * Showing every Classic model
+	 * 
 	 */
 	/**
 	 * @return [type]
 	 */
 	/**
 	 * clasico
+	 * 
+	 * Showing every Classic model
 	 *
 	 * @return void
 	 */
@@ -45,13 +47,15 @@ class ModeloController
 	}
 
 	/**
-	 * Showing every Modern model
+	 * 
 	 */
 	/**
 	 * @return [type]
 	 */
 	/**
 	 * moderno
+	 * 
+	 * Showing every Modern model
 	 *
 	 * @return void
 	 */
@@ -66,13 +70,15 @@ class ModeloController
 	}
 
 	/**
-	 * Showing every model in the admin view.
+	 * 
 	 */
 	/**
 	 * @return [type]
 	 */
 	/**
 	 * listar
+	 * 
+	 * Showing every model in the admin view.
 	 *
 	 * @return void
 	 */
@@ -86,11 +92,13 @@ class ModeloController
 	}
 
 	/**
-	 * Showing model given the ID
+	 * 
 	 */
 
 	/**
 	 * info
+	 * 
+	 * Showing model given the ID
 	 *
 	 * @return void
 	 */
@@ -103,10 +111,12 @@ class ModeloController
 	}
 
 	/**
-	 * We add the new Model into the Database
+	 * 
 	 */
 	/**
 	 * anyadir
+	 * 
+	 * We add the new Model into the Database
 	 *
 	 * @return void
 	 */
@@ -176,10 +186,12 @@ class ModeloController
 	}
 
 	/**
-	 * Delete function to delete a Model from the Database
+	 * 
 	 */
 	/**
 	 * borrar
+	 * 
+	 * Delete function to delete a Model from the Database
 	 *
 	 * @return void
 	 */

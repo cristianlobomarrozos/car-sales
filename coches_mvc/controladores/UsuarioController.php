@@ -55,10 +55,12 @@ class UsuarioController
 	}
 
 	/**
-	 * List of all users Registered in our App, will be only seen by the ADMINS
+	 * 
 	 */
 	/**
 	 * listar
+	 * 
+	 * List of all users Registered in our App, will be only seen by the ADMINS
 	 *
 	 * @return void
 	 */
@@ -71,10 +73,12 @@ class UsuarioController
 	}
 
 	/**
-	 * Our own profile (only seen by the user)
+	 * 
 	 */
 	/**
 	 * perfil
+	 * 
+	 * Our own profile (only seen by the user)
 	 *
 	 * @return void
 	 */
@@ -88,10 +92,12 @@ class UsuarioController
 	}
 
 	/**
-	 * Our orders (only seen by the user)
+	 * 
 	 */
 	/**
 	 * pedidos
+	 * 
+	 * Our orders (only seen by the user)
 	 *
 	 * @return void
 	 */
@@ -106,10 +112,12 @@ class UsuarioController
 	}
 
 	/**
-	 * Delete user from the Database(only admin role can do it)
+	 * 
 	 */
 	/**
 	 * delete
+	 * 
+	 * Delete user from the Database(only admin role can do it)
 	 *
 	 * @return void
 	 */
@@ -126,10 +134,12 @@ class UsuarioController
 	}
 
 	/**
-	 * Function used to promote users to admin role (only admin role can do it)
+	 * 
 	 */
 	/**
 	 * update
+	 * 
+	 * Function used to promote users to admin role (only admin role can do it)
 	 *
 	 * @return void
 	 */
@@ -153,10 +163,12 @@ class UsuarioController
 	}
 
 	/**
-	 * Sign Up function
+	 * 
 	 */
 	/**
 	 * registrar
+	 * 
+	 * Sign Up function
 	 *
 	 * @return void
 	 */
@@ -187,10 +199,12 @@ class UsuarioController
 	}
 
 	/**
-	 * Function used to generate API_KEY, so the user will be able to use our API
+	 * 
 	 */
 	/**
 	 * api
+	 * 
+	 * Function used to generate API_KEY, so the user will be able to use our API
 	 *
 	 * @return void
 	 */

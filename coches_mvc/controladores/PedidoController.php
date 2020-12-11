@@ -28,10 +28,12 @@ class PedidoController
 	}
 
 	/**
-	 * List of the user's orders
+	 * 
 	 */
 	/**
 	 * pedidos
+	 * 
+	 * List of the user's orders
 	 *
 	 * @return void
 	 */
@@ -45,10 +47,12 @@ class PedidoController
 	}
 
 	/**
-	 * Creating the new row in the "contiene" table
+	 * 
 	 */
 	/**
 	 * contiene
+	 * 
+	 * Creating the new row in the "contiene" table
 	 *
 	 * @return void
 	 */

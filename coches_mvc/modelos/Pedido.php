@@ -119,10 +119,12 @@ class Pedido
 	}
 
 	/**
-	 * Show user's order (only seen by the user)
+	 * 
 	 */
 	/**
 	 * mostrarPedidos
+	 * 
+	 * Show user's order (only seen by the user)
 	 *
 	 * @param  mixed $id
 	 * @return void
@@ -157,10 +159,12 @@ class Pedido
 	}
 
 	/**
-	 * Insert into 'pedido' table the new row
+	 * 
 	 */
 	/**
 	 * save
+	 * 
+	 * Insert into 'pedido' table the new row
 	 *
 	 * @return void
 	 */
@@ -182,10 +186,12 @@ class Pedido
 	}
 
 	/**
-	 * Insert into 'contiene' table the new row
+	 * 
 	 */
 	/**
 	 * contiene
+	 * 
+	 * Insert into 'contiene' table the new row
 	 *
 	 * @param  mixed $idm
 	 * @return void

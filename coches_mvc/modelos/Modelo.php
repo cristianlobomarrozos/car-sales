@@ -180,10 +180,12 @@ class Modelo
     }
 
     /**
-     * Searching inside our Database the classic models
+     * 
      */
     /**
      * mostrarClasicos
+     * 
+     * Searching inside our Database the classic models
      *
      * @return void
      */
@@ -204,10 +206,12 @@ class Modelo
     }
 
     /**
-     * Searching inside our Database the modern models
+     * 
      */
     /**
      * mostrarModernos
+     * 
+     * Searching inside our Database the modern models
      *
      * @return void
      */
@@ -229,10 +233,12 @@ class Modelo
     }
 
     /**
-     * Searching inside our Database all models
+     * 
      */
     /**
      * mostrarTodos
+     * 
+     * Searching inside our Database all models
      *
      * @return void
      */
@@ -253,10 +259,12 @@ class Modelo
     }
 
     /**
-     * Searching inside our Database an especific model and show its information
+     * 
      */
     /**
      * mostrarModelo
+     * 
+     * Searching inside our Database an especific model and show its information
      *
      * @param  mixed $id
      * @return void
@@ -273,10 +281,12 @@ class Modelo
     }
 
     /**
-     * Adding a new model in the Database
+     * 
      */
     /**
      * anadir
+     * 
+     * Adding a new model in the Database
      *
      * @return void
      */
@@ -306,10 +316,12 @@ class Modelo
     }
 
     /**
-     * Deleting a model from the Database
+     * 
      */
     /**
      * delete
+     * 
+     * Deleting a model from the Database
      *
      * @param  mixed $id
      * @return void
@@ -326,10 +338,12 @@ class Modelo
     }
 
     /**
-     * Edit model's information
+     * 
      */
     /**
      * editar
+     * 
+     * Edit model's information
      *
      * @param  mixed $id
      * @return void

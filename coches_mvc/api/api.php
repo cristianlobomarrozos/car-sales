@@ -18,7 +18,7 @@ function Marca($id)
 
         //echo "<pre>".print_r($marca, true)."</pre>" ;
 
-        // generamos el resultado que deseemos
+        // Generating the wanted result
         return [
             "id"       => $marca->getCodMar(),
             "name"     => $marca->getNomMar(),
@@ -80,7 +80,7 @@ function Usuario($id)
 
         //echo "<pre>".print_r($usr, true)."</pre>" ;
 
-        // generamos el resultado que deseemos
+        // Generating the wanted result
         $data = [
             "id"       => $usr->getCodUsu(),
             "name"     => $usr->getNomUsu(),
@@ -159,7 +159,4 @@ else :
 
 endif;
 
-
-// devolvemos el contenido especificando que es JSON
-//header("Content-Type: application/json");
 
