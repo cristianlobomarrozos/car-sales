@@ -16,6 +16,8 @@
 		$nom = $_GET["con"] ;
 		$ope = $_GET["ope"] ;
 
+		
+
 		$controller = $nom."Controller" ;
  
 		ucfirst($controller);

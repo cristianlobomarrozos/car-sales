@@ -58,6 +58,7 @@
 		 * @return void
 		 */
 		public function listar() {
+			
 			$user = Usuario::mostrarTodos() ;
             //echo "<pre>".print_r($user, true)."</pre>" ;
 			require_once "./vistas/adminUserView.php" ;

@@ -1,60 +1,26 @@
-let paginationLeftPos = "20px";
-let paginationOpacity = 0;
-let checkPaginationClick = 0;
-
-$(".pagination-page-number").click(function() {
-  $(".pagination-page-number").removeClass("active");
-  $(this).addClass("active");
-  paginationLeftPos = $(this).prop("offsetLeft") + "px";
-  paginationOpacity = 1;
-  checkPaginationClick = 1;
-
-  $(".pagination-hover-overlay").css({
-    left: paginationLeftPos,
-    backgroundColor: "#00178a",
-    opacity: paginationOpacity
-  });
-  $(this).css({
-    color: "#fff"
-  });
+$(document).ready(function(){
+	var totalPage = parseInt($('#totalPages').val());	
+	var pag = $('#pagination').simplePaginator({
+		totalPages: totalPage,
+		maxButtonsVisible: 5,
+		currentPage: 1,
+		nextLabel: 'Next',
+		prevLabel: 'Prev',
+		firstLabel: 'First',
+		lastLabel: 'Last',
+		clickCurrentPage: true,
+		pageChange: function(page) {	
+			alert("dentro") ;		
+			$("#content").html('<tr><td colspan="6"><strong>loading...</strong></td></tr>');
+            $.ajax({
+				url:"index.php?con=modelo&ope=listar",
+				method:"POST",
+				dataType: "json",		
+				data:{page:	page},
+				success:function(responseData){
+					$('#content').html(responseData.html);
+				}
+			});
+		}
+	});
 });
-
-$(".pagination-page-number").hover(
-  function() {
-    paginationOpacity = 1;
-    $(".pagination-hover-overlay").css({
-      backgroundColor: "#00c1dd",
-      left: $(this).prop("offsetLeft") + "px",
-      opacity: paginationOpacity
-    });
-
-    $(".pagination-page-number.active").css({
-      color: "#333d45"
-    });
-
-    $(this).css({
-      color: "#fff"
-    });
-  },
-  function() {
-    if (checkPaginationClick) {
-      paginationOpacity = 1;
-    } else {
-      paginationOpacity = 0;
-    }
-
-    $(".pagination-hover-overlay").css({
-      backgroundColor: "#00178a",
-      opacity: paginationOpacity,
-      left: paginationLeftPos
-    });
-
-    $(this).css({
-      color: "#333d45"
-    });
-
-    $(".pagination-page-number.active").css({
-      color: "#fff"
-    });
-  }
-);

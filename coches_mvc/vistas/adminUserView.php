@@ -54,21 +54,16 @@ else :
           <tbody>
 
             <?php
-            $limit = 5;
-            $page = (isset($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
-            $paginationStart = ($page - 1) * $limit;
-            $allRecrods = count($user);
-
-            $totalPages = ceil($allRecrods / $limit);
-
-            //echo $total_records;
-            //die() ;
-            //echo "<pre>".print_r($user, true)."</pre>" ;
-            //die();
+            
+            
+            //$total_records = $user[10] ;
+            //unset($user[10]) ;
+            //$total_pages = $user[11] ;
+            //unset($user[11]) ;
+            //$page = $user[12] ;
+            //unset($user[12]) ;
+            
             foreach ($user as $item) :
-
-              //$id = $item->getCodUsu() ;
-              //echo "<pre>".print_r($item, true)."</pre>" ;
             ?>
               <tr data-codusu="<?= $item->getCodUsu() ?>" class="id" data-nomusu="<?= $item->getNomUsu() ?>" data-ema="<?= $item->getEmail() ?>" data-ape="<?= $item->getApeUsu() ?>" data-fec="<?= $item->getFecNacUsu() ?>" data-adm="<?= $item->getEsAdmin() ?>">
                 <input type="hidden" name="id">
@@ -104,19 +99,16 @@ else :
         endif;
     ?>
     </table>
-
-    <nav aria-label="Page navigation example mt-5">
-      <ul class="pagination justify-content-center">
-        <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-          <li class="page-item <?php if ($page == $i) {
-                                  echo 'active';
-                                } ?>">
-            <a class="page-link" href="index.php?con=usuario&ope=listar&page=<?= $i; ?>"> <?= $i; ?> </a>
-          </li>
-        <?php endfor; ?>
-      </ul>
-    </nav>
-
+<?php  
+/*
+    
+$pagLink = "<ul class='pagination'>";  
+for ($i=1; $i<=$total_pages; $i++) {
+              $pagLink .= "<li class='page-item'><a class='page-link link1' href='index.php?con=usuario&ope=listar&page=".$i."'>".$i."</a></li>";	
+}
+echo $pagLink . "</ul>";  
+*/
+?>
     </div>
     </form>
 

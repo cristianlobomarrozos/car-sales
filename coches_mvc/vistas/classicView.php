@@ -8,7 +8,7 @@
 <div class="card mb-3 my-3" style="max-width: 100%;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <a href="index.php?con=modelo&ope=info&id=<?= $item->getCodMod() ?>"><img src="./images/coches/<?=$item->getNomMod()?>.jpg" class="card-img" alt="<?= $item->getNomMod() ?>" style="max-height: 300px";></a>
+      <a href="index.php?con=modelo&ope=info&id=<?= $item->getCodMod() ?>"><img src="./images/coches/<?=$item->getNomMod()?>/0.jpg" class="card-img" alt="<?= $item->getNomMod() ?>" style="max-height: 300px";></a>
     </div>
     <div class="col-md-8">
       <div class="card-body">

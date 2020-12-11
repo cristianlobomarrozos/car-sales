@@ -21,34 +21,37 @@ $sesion = Sesion::getInstance();
 
 
 	<link href="./fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
-	<link rel="stylesheet" href="./css/style.css">
-	<link rel="stylesheet" href="./css/carousel.css">
+	<link rel="stylesheet" href="./css/output.css">
+
+	<script src="js/pagination.js"></script>
 
 	<!--<script src="node_modules/chart.js/dist/Chart.js"></script>-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<script type="text/javascript">
 		/**
-		 * Paginationc script using AJAX
+		 * Pagination script using AJAX
 		 */
 		$(document).ready(function() {
-			$("#target-content").load("pagination.php?page=1");
-			$(".page-link").click(function() {
-				var id = $(this).attr("data-id");
-				var select_id = $(this).parent().attr("id");
+			function loadData(page) {
 				$.ajax({
-					url: "pagination.php",
-					type: "GET",
-					data: {
-						page: id
-					},
+					url: "index.php?con=usuario&ope=listar",
+					type: "POST",
 					cache: false,
-					success: function(dataResult) {
-						$("#target-content").html(dataResult);
-						$(".pageitem").removeClass("active");
-						$("#" + select_id).addClass("active");
-
+					data: {
+						page_no: page
+					},
+					success: function(response) {
+						$("#table-data").html(response);
 					}
 				});
+			}
+			loadData();
+
+			// Pagination code
+			$(document).on("click", ".pagination li a", function(e) {
+				e.preventDefault();
+				var pageId = $(this).attr("id");
+				loadData(pageId);
 			});
 		});
 
@@ -267,6 +270,7 @@ $sesion = Sesion::getInstance();
 			$('.delete_second').on('click', function(e) {
 				e.preventDefault();
 				col.fadeOut(1000);
+
 				function ajax() {
 					$.ajax({
 						url: "index.php?con=usuario&ope=delete",
@@ -365,7 +369,7 @@ $sesion = Sesion::getInstance();
 							//We obtain the unique id of the clicked suggestion
 							var id = $(this).attr('id');
 							var nombre = $(this).attr('data');
-							
+
 							//We edit the input value with data of the suggestion clicked
 
 							$('#key').val($('#' + id).attr('data'));
@@ -378,6 +382,20 @@ $sesion = Sesion::getInstance();
 				});
 			});
 		});
+
+		$(document).ready(function() {
+			$(".link1").on('click', function(e) {
+				// prevent the default action, in this case the following of a link
+				e.preventDefault();
+				// capture the href attribute of the a element
+				var url = $(this).attr('href');
+				alert(url) ;
+				// perform a get request using ajax to the captured href value
+				$.get(url, function() {
+					// success
+				});
+			});
+		});
 	</script>
 
 </head>
@@ -386,7 +404,7 @@ $sesion = Sesion::getInstance();
 	<nav>
 		<div>
 			<ul>
-				<li><a href="./index.php">Inicio</a></li>
+				<li><a class="logoA" href="./index.php"><img class="logo" src="images/iconos/logo2.svg"></img></a></li>
 				<li class="dropdown1">
 					<a class="dropdown1" href="javascript:void(0)">Modelos</a>
 					<div class="dropdown1-content">
